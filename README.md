@@ -6,8 +6,8 @@
 
 
 ## Manual and R script
-The comprehensive manual of `Hapi` is available here: [Hapi Manual](http://htmlpreview.github.io/?https://github.com/Jialab-UCR/Jialab-UCR.github.io/blob/master/Hapi_manual.html).
-R code of the workflow is available here: [Hapi Workflow](https://github.com/Jialab-UCR/Jialab-UCR.github.io/blob/master/Hapi_workflow.html)
+The comprehensive manual of `Hapi` is available here: [Hapi Manual](http://htmlpreview.github.io/?https://github.com/Jialab-UCR/Jialab-UCR.github.io/blob/master/Hapi_manual.html).  
+R code of the workflow is available here: [Hapi Workflow](https://github.com/Jialab-UCR/Jialab-UCR.github.io/blob/master/Hapi_workflow.R)
 
 
 ## Installation
@@ -28,12 +28,18 @@ R code of the workflow is available here: [Hapi Workflow](https://github.com/Jia
 
 * Run the following command in R
 ```R
+### Install 'HMM' package ahead
+install.packages('HHM')
+
 install.packages('Hapi_0.99.0.tar.gz', repos = NULL, type='source')
 ```
 
 ### On Linux and Mac systems
 Directly run the following command in R
 ```R
+### Install 'HMM' package ahead
+install.packages('HHM')
+
 install.packages('Hapi_0.99.0.tar.gz', repos = NULL, type='source')
 ```
 
