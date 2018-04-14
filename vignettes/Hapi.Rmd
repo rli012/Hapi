@@ -34,6 +34,9 @@ Population-based computational phasing methods cannot infer high-resolution hapl
 Before accepted in [Bioconductor](https://www.bioconductor.org/), `Hapi` can be downloaded and installed locally. The download link is [here](https://github.com/Jialab-UCR/Jialab-UCR.github.io/blob/master/Hapi_0.99.0.tar.gz).
 
 ```{r installation, eval=FALSE, message=FALSE, warning=FALSE}
+### install 'HMM' package ahead
+install.packages('HMM')
+
 install.packages('Hapi_0.99.0.tar.gz', repos = NULL, type='source')
 ```
 
