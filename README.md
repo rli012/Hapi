@@ -2,7 +2,7 @@
 
 ## Introduction
 
-`Hapi` is a novel easy-to-use and high-efficient algorithm that only requires **3 to 5 gametes** to reconstruct accurate and high-resolution haplotypes of an individual. The gamete genotype data may be generated from **various platforms including genotyping arrays and sequencing even with low-coverage**. `Hapi` simply takes genotype data of known hetSNPs in single gamete cells as input and report the high-resolution haplotypes as well as the confidence level of each phased hetSNPs. The package also includes a module allowing **downstream analyses and visualization of identified crossovers** in the gametes. 
+`Hapi` is a novel easy-to-use and high-efficient algorithm that only requires **3 to 5 gametes** to reconstruct **accurate and high-resolution haplotypes** of an individual. The gamete genotype data may be generated from **various platforms including genotyping arrays and sequencing even with low-coverage**. `Hapi` simply takes genotype data of known hetSNPs in single gamete cells as input and report the high-resolution haplotypes as well as the confidence level of each phased hetSNPs. The package also includes a module allowing **downstream analyses and visualization of identified crossovers** in the gametes. 
 
 
 ## Manual and R script
