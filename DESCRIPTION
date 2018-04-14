@@ -18,7 +18,7 @@ Description: Hapi (short for Haplotyping with imperfect genotype data) is a nove
 	genotype data of known hetSNPs in single gamete cells as input and report the high-resolution 
 	haplotypes as well as confidence of each phased hetSNPs. The package also includes a module 
 	allowing downstream analyses and visualization of identified crossovers in the gametes. 
-Depends: R (>= 3.4.0)
+Depends: R (>= 3.5)
 License: Artistic-2.0
 Encoding: UTF-8
 LazyData: false
