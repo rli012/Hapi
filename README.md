@@ -29,7 +29,7 @@ R code of the workflow is available here: [Hapi Workflow](https://github.com/Jia
 * Run the following command in R
 ```R
 ### Install 'HMM' package ahead
-install.packages('HHM')
+install.packages('HMM')
 
 install.packages('Hapi_0.99.0.tar.gz', repos = NULL, type='source')
 ```
@@ -38,7 +38,7 @@ install.packages('Hapi_0.99.0.tar.gz', repos = NULL, type='source')
 Directly run the following command in R
 ```R
 ### Install 'HMM' package ahead
-install.packages('HHM')
+install.packages('HMM')
 
 install.packages('Hapi_0.99.0.tar.gz', repos = NULL, type='source')
 ```
