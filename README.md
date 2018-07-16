@@ -23,7 +23,7 @@ install.packages('HMM')
 devtools::install_github('Jialab-UCR/Hapi')
 ```
 
-If the installation fails with the error: object 'enexprs' is not exported by 'namespace:rlang', please install the developmental version of `rlang` package first.
+If the installation fails with the ERROR: object 'enexprs' is not exported by 'namespace:rlang', please install the developmental version of `rlang` package first.
 
 ```R
 devtools::install_github("tidyverse/rlang", build_vignettes = TRUE)
