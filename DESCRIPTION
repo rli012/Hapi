@@ -1,10 +1,17 @@
 Package: Hapi
-Title: Inference of Chromosome-length Haplotypes using Genomic Data of Few Single Gamete Cells
-Version: 0.99.1
-Authors@R: c(
-	person(given='Ruidong', family='Li', email='rli012@ucr.edu', role=c('aut','cre','cph')),
-	person(given='Han', family='Qu', email='hqu002@ucr.edu', role=c('ctb')),
-	person(given='Zhenyu', family='Jia', email='zhenyuj@ucr.edu', role=c('aut','cre','cph','ths')))
+Title: Inference of Chromosome-length Haplotypes using Genomic Data of
+        Single Gamete Cells
+Version: 0.0.1
+Author: Ruidong Li,
+	Han Qu,
+	Jinfeng Chen,
+	Shibo Wang,
+	Le Zhang,
+	Julong Wei,
+	Sergio Pietro Ferrante,
+	Mikeal L. Roose,
+	Zhenyu Jia
+Maintainer: Ruidong Li <rli012@ucr.edu>
 Description: Hapi (short for Haplotyping with imperfect genotype data) is a novel easy-to-use, 
 	R package for inference of chromosome-length haplotypes using a few haploid 
 	gametes of an individual. The gamete genotype data may be generated from various platforms 
@@ -16,10 +23,11 @@ Depends: R (>= 3.4.0)
 License: Artistic-2.0
 Encoding: UTF-8
 LazyData: false
-Imports: HMM,
-    ggplot2
-Suggests: knitr,
-    testthat
+Imports: HMM, ggplot2
+Suggests: knitr, testthat
 VignetteBuilder: knitr
-biocViews: SNP, GenomicVariation, Genetics, HiddenMarkovModel, SingleCell, Sequencing, Microarray
+biocViews: SNP, GenomicVariation, Genetics, HiddenMarkovModel,
+        SingleCell, Sequencing, Microarray
 RoxygenNote: 6.0.1
+NeedsCompilation: no
+Packaged: 2018-04-14 05:57:35 UTC; ruidong
