@@ -1,24 +1,18 @@
 Package: Hapi
 Title: Inference of Chromosome-length Haplotypes using Genomic Data of Few Single Gamete Cells
 Version: 0.99.1
-Author: Ruidong Li,
-	Han Qu,
-	Jinfeng Chen,
-	Shibo Wang,
-	Le Zhang,
-	Julong Wei,
-	Sergio Pietro Ferrante,
-	Mikeal L. Roose,
-	Zhenyu Jia
-Maintainer: Ruidong Li <rli012@ucr.edu>
+Authors@R: c(
+	person(given='Ruidong', family='Li', email='rli012@ucr.edu', role=c('aut','cre','cph')),
+	person(given='Han', family='Qu', email='hqu002@ucr.edu', role=c('ctb')),
+	person(given='Zhenyu', family='Jia', email='zhenyuj@ucr.edu', role=c('aut','cre','cph','ths')))
 Description: Hapi (short for Haplotyping with imperfect genotype data) is a novel easy-to-use, 
-	R/Bioconductor package for inference of chromosome-length haplotypes using a few haploid 
+	R package for inference of chromosome-length haplotypes using a few haploid 
 	gametes of an individual. The gamete genotype data may be generated from various platforms 
 	including genotyping arrays and sequencing even with low-coverage. Hapi simply takes 
 	genotype data of known hetSNPs in single gamete cells as input and report the high-resolution 
 	haplotypes as well as confidence of each phased hetSNPs. The package also includes a module 
 	allowing downstream analyses and visualization of identified crossovers in the gametes. 
-Depends: R (>= 3.5)
+Depends: R (>= 3.4.0)
 License: Artistic-2.0
 Encoding: UTF-8
 LazyData: false
