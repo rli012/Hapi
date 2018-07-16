@@ -49,11 +49,11 @@ hapiAssemble <- function(gmt, draftHap, keepLowConsistency=TRUE,
     #coord <- rownames(gmt)
     #sam <- colnames(gmt)
     
-    haps <- apply(gmt,2,function(x) hapInferFun(hap,x, consistencyThresh))
+    haps <- apply(gmt,2,function(x) hapInferFun(hap, x, consistencyThresh))
     
     filter <- c()
     for (i in 1:ncol(haps)) {
-        iden <- haps[,1] == hap
+        iden <- haps[,i] == hap
         ratio.t <- sum(iden==TRUE, na.rm=TRUE)/sum(!is.na(iden))
         
         if (ratio.t < consistencyThresh) {
@@ -83,7 +83,6 @@ hapiAssemble <- function(gmt, draftHap, keepLowConsistency=TRUE,
     
     return (newHap)
 }
-
 
 
 ##' @title Assembly of haplotypes in regions at the end of a chromosome
@@ -292,7 +291,6 @@ defineWindowFun <- function(gmt,hap) {
     return (window)
     
 }
-
 
 
 

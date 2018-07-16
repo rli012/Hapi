@@ -31,10 +31,25 @@ Population-based computational phasing methods cannot infer high-resolution hapl
 ***
 
 # `Hapi` package installation 
-Before accepted in [Bioconductor](https://www.bioconductor.org/), `Hapi` can be downloaded and installed locally. The download link is [here](https://github.com/Jialab-UCR/Jialab-UCR.github.io/blob/master/Hapi_0.99.0.tar.gz).
+`Hapi` can be easily installed from Github by running the following command in R:
+
+```{r installation github, eval=FALSE, message=FALSE, warning=FALSE}
+### Install dependencies ahead
+install.packages('devtools')
+install.packages('HMM')
+
+devtools::install_github('Jialab-UCR/Hapi')
+```
+
+If the installation fails with the ERROR: object 'enexprs' is not exported by 'namespace:rlang', please install the developmental version of `rlang` package first.
+
+```{r install rlang, eval=FALSE, message=FALSE, warning=FALSE}
+devtools::install_github("tidyverse/rlang", build_vignettes = TRUE)
+```
+
+`Hapi` can also be downloaded and installed locally. The download link is [here](https://github.com/Jialab-UCR/Jialab-UCR.github.io/blob/master/Hapi_0.99.0.tar.gz).
 
 ```{r installation, eval=FALSE, message=FALSE, warning=FALSE}
-### install 'HMM' package ahead
 install.packages('HMM')
 
 install.packages('Hapi_0.99.0.tar.gz', repos = NULL, type='source')
@@ -43,6 +58,9 @@ install.packages('Hapi_0.99.0.tar.gz', repos = NULL, type='source')
 ```{r load, eval=TRUE, message=FALSE, warning=FALSE}
 library(Hapi)
 ```
+
+
+
 
 ***
 
