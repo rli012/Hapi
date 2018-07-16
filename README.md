@@ -11,9 +11,27 @@ R code of the workflow is available here: [Hapi Workflow](https://github.com/Jia
 
 
 ## Installation
-`Hapi` is now under review in Bioconductor. Users can install the package locally.
 
-### On Windows system
+### Installation from Github
+`Hapi` can be easily installed from Github by running the following command in R:
+
+```R
+### Install dependencies ahead
+install.packages('devtools')
+install.packages('HMM')
+
+devtools::install_github('Jialab-UCR/Hapi')
+```
+
+If the installation fails with the error: object 'enexprs' is not exported by 'namespace:rlang', please install the developmental version of `rlang` package first.
+
+```R
+devtools::install_github("tidyverse/rlang", build_vignettes = TRUE)
+```
+
+### Installation locally
+
+#### On Windows system
 * Download the package [Hapi_0.99.0.tar.gz](https://github.com/Jialab-UCR/Jialab-UCR.github.io/blob/master/Hapi_0.99.0.tar.gz)
 * Make sure you have [Rtools](https://cran.r-project.org/bin/windows/Rtools/) installed
 * Add R and Rtools to the Path Variable on the Environment Variables panel, including
@@ -34,7 +52,7 @@ install.packages('HMM')
 install.packages('Hapi_0.99.0.tar.gz', repos = NULL, type='source')
 ```
 
-### On Linux and Mac systems
+#### On Linux and Mac systems
 Directly run the following command in R
 ```R
 ### Install 'HMM' package ahead
@@ -42,5 +60,3 @@ install.packages('HMM')
 
 install.packages('Hapi_0.99.0.tar.gz', repos = NULL, type='source')
 ```
-
-
