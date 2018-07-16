@@ -32,7 +32,7 @@ devtools::install_github("tidyverse/rlang", build_vignettes = TRUE)
 ### Installation locally
 
 #### On Windows system
-* Download the package [Hapi_0.99.0.tar.gz](https://github.com/Jialab-UCR/Jialab-UCR.github.io/blob/master/Hapi_0.0.1.tar.gz)
+* Download the package [Hapi_0.0.1.tar.gz](https://github.com/Jialab-UCR/Jialab-UCR.github.io/blob/master/Hapi_0.0.1.tar.gz)
 * Make sure you have [Rtools](https://cran.r-project.org/bin/windows/Rtools/) installed
 * Add R and Rtools to the Path Variable on the Environment Variables panel, including
 
