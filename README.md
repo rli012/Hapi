@@ -12,8 +12,15 @@ R code of the workflow is available here: [Hapi Workflow](https://github.com/Jia
 
 ## Installation
 
+### Installation from CRAN
+`Hapi` can be easily installed from [CRAN](https://cran.r-project.org/web/packages/Hapi/index.html) by running the following command in R:
+
+```R
+install.packages('Hapi')
+```
+
 ### Installation from Github
-`Hapi` can be easily installed from Github by running the following command in R:
+The development version of `Hapi` can be easily installed from Github
 
 ```R
 ### Install dependencies ahead
