@@ -3,7 +3,7 @@ title: 'Hapi: an R/Bioconductor package for chromosome-length haplotype
     inference using genotypic data of single gamete cells'
 author: "Ruidong Li and Zhenyu Jia\\
 
-        Department of Plant and Botany Sciences, Univeristy of California, Riverside"
+        Department of Plant and Botany Sciences, University of California, Riverside"
 
 date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
 vignette: >
