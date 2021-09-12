@@ -17,6 +17,5 @@ R code of the workflow is available here: [Hapi Workflow](https://github.com/Jia
 ## Installation
 
 ```R
-### Install dependencies ahead
 install.packages('Hapi')
 ```
