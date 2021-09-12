@@ -16,51 +16,7 @@ R code of the workflow is available here: [Hapi Workflow](https://github.com/Jia
 
 ## Installation
 
-### Installation from Github
-The development version of `Hapi` can be easily installed from Github:
-
 ```R
 ### Install dependencies ahead
-install.packages('devtools')
-install.packages('HMM')
-
-devtools::install_github('Jialab-UCR/Hapi')
-```
-
-If the installation fails with the ERROR: object 'enexprs' is not exported by 'namespace:rlang', please install the developmental version of `rlang` package first.
-
-```R
-devtools::install_github("tidyverse/rlang", build_vignettes = TRUE)
-```
-
-### Installation locally
-Please download the compressed package [Hapi_0.0.1.tar.gz](https://github.com/Jialab-UCR/Jialab-UCR.github.io/blob/master/Hapi_0.0.1.tar.gz)
-
-#### On Windows system
-* Make sure you have [Rtools](https://cran.r-project.org/bin/windows/Rtools/) installed
-* Add R and Rtools to the Path Variable on the Environment Variables panel, including
-
-    c:\program files\Rtools\bin
-
-    c:\program files\Rtools\gcc-4.6.3\bin
-
-    c:\program files\R\R.3.x.x\bin\i386
-
-    c:\program files\R\R.3.x.x\bin\x64 
-
-* Run the following command in R
-```R
-### Install 'HMM' package ahead
-install.packages('HMM')
-
-install.packages('Hapi_0.0.1.tar.gz', repos = NULL, type='source')
-```
-
-#### On Linux and Mac systems
-Directly run the following command in R
-```R
-### Install 'HMM' package ahead
-install.packages('HMM')
-
-install.packages('Hapi_0.0.1.tar.gz', repos = NULL, type='source')
+install.packages('Hapi')
 ```
