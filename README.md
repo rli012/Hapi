@@ -1,6 +1,6 @@
 # *Hapi* - Chromosome-length haplotype inference using genotypic data of single gamete cells
 
-#### Please cite the following publication if the data or code in the repostiory is used in your study:
+#### Please cite the following publication:
 Li, R., Qu, H., Chen, J. et al. (2020). Inference of Chromosome-Length Haplotypes Using Genomic Data of Three or a Few More Single Gametes. *[Molecular Biology and Evolution](https://doi.org/10.1093/molbev/msaa176)*
 
 
