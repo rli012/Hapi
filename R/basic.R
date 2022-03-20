@@ -65,3 +65,161 @@ flipFun <- function(v){
     return (v2)
 }
 
+### HMM functions (from Dr. Lin Himmelmann's HMM package)
+### https://rdrr.io/cran/HMM/src/R/HMM.r
+### https://cran.r-project.org/web/packages/HMM/index.html
+initHMM = function(States, Symbols, startProbs=NULL, transProbs=NULL,
+    emissionProbs=NULL)
+{
+  nStates    = length(States)
+  nSymbols   = length(Symbols)
+  S          = rep(1/nStates,nStates)
+  T          = 0.5*diag(nStates) + array(0.5/(nStates),c(nStates,nStates))
+  E          = array(1/(nSymbols),c(nStates,nSymbols))
+  names(S)   = States
+  dimnames(T)= list(from=States,to=States)
+  dimnames(E)= list(states=States,symbols=Symbols)
+  if(!is.null(startProbs)){S[]  = startProbs[]}
+  if(!is.null(transProbs)){T[,] = transProbs[,]}
+  if(!is.null(emissionProbs)){E[,] = emissionProbs[,]}
+  return(list(States=States,Symbols=Symbols,startProbs=S,transProbs=T,
+      emissionProbs=E))
+}
+
+simHMM = function(hmm, length)
+{
+  hmm$transProbs[is.na(hmm$transProbs)]       = 0
+  hmm$emissionProbs[is.na(hmm$emissionProbs)] = 0
+  states   = c()
+  emission = c()
+  states   = c(states, sample(hmm$States,1,prob=hmm$startProbs))
+  for(i in 2:length)
+  {
+    state  = sample(hmm$States, 1, prob=hmm$transProbs[states[i-1],])
+  	states = c(states, state)
+  }
+  for(i in 1:length)
+  {
+    emi      = sample(hmm$Symbols, 1, prob=hmm$emissionProbs[states[i],])
+  	emission = c(emission, emi)
+  }
+  return(list(states=states,observation=emission))
+}
+
+viterbi = function(hmm, observation)
+{
+  hmm$transProbs[is.na(hmm$transProbs)]       = 0
+  hmm$emissionProbs[is.na(hmm$emissionProbs)] = 0
+  nObservations  = length(observation)
+  nStates    = length(hmm$States)
+  v          = array(NA,c(nStates,nObservations))
+  dimnames(v)= list(states=hmm$States,index=1:nObservations)
+  # Init
+  for(state in hmm$States)
+  {
+    v[state,1] = log(hmm$startProbs[state] * hmm$emissionProbs[state,observation[1]])
+  }
+  # Iteration
+  for(k in 2:nObservations)
+  {
+    for(state in hmm$States)
+    {
+      maxi = NULL
+      for(previousState in hmm$States)
+      {
+        temp = v[previousState,k-1] + log(hmm$transProbs[previousState,state]) 
+        maxi = max(maxi, temp)
+      }
+      v[state,k] = log(hmm$emissionProbs[state,observation[k]]) + maxi
+    }
+  }
+  # Traceback
+  viterbiPath = rep(NA,nObservations)
+  for(state in hmm$States)
+  {
+    if(max(v[,nObservations])==v[state,nObservations])
+    {
+      viterbiPath[nObservations] = state
+      break
+    }
+  }
+  for(k in (nObservations-1):1)
+  {
+    for(state in hmm$States)
+    {
+      if(max(v[,k]+log(hmm$transProbs[,viterbiPath[k+1]]))
+          ==v[state,k]+log(hmm$transProbs[state,viterbiPath[k+1]]))
+      {
+        viterbiPath[k] = state
+        break
+      }
+    }
+  }
+  return(viterbiPath)
+}
+
+forward = function(hmm, observation)
+{
+  hmm$transProbs[is.na(hmm$transProbs)]       = 0
+  hmm$emissionProbs[is.na(hmm$emissionProbs)] = 0
+  nObservations  = length(observation)
+  nStates    = length(hmm$States)
+  f          = array(NA,c(nStates,nObservations))
+  dimnames(f)= list(states=hmm$States,index=1:nObservations)
+  # Init
+  for(state in hmm$States)
+  {
+    f[state,1] = log(hmm$startProbs[state] * hmm$emissionProbs[state,observation[1]])
+  }
+  # Iteration
+  for(k in 2:nObservations)
+  {
+    for(state in hmm$States)
+    {
+      logsum = -Inf
+      for(previousState in hmm$States)
+      {
+        temp   = f[previousState,k-1] + log(hmm$transProbs[previousState,state])
+		if(temp > - Inf)
+		{
+			logsum = temp + log(1 + exp(logsum - temp ))
+		}
+      }
+      f[state,k] = log(hmm$emissionProbs[state,observation[k]]) + logsum
+    }
+  }
+  return(f)
+}
+
+backward = function(hmm, observation)
+{
+  hmm$transProbs[is.na(hmm$transProbs)]       = 0
+  hmm$emissionProbs[is.na(hmm$emissionProbs)] = 0
+  nObservations  = length(observation)
+  nStates    = length(hmm$States)
+  b          = array(NA,c(nStates,nObservations))
+  dimnames(b)= list(states=hmm$States,index=1:nObservations)
+  # Init
+  for(state in hmm$States)
+  {
+    b[state,nObservations] = log(1)
+  }
+  # Iteration
+  for(k in (nObservations-1):1)
+  {
+    for(state in hmm$States)
+    {
+      logsum = -Inf
+      for(nextState in hmm$States)
+      {
+        temp   = b[nextState,k+1] + log(hmm$transProbs[state,nextState]*hmm$emissionProbs[nextState,observation[k+1]])
+		if(temp > - Inf)
+		{
+        	logsum = temp + log(1 + exp(logsum-temp))
+		}
+      }
+      b[state,k] = logsum
+    }
+  }
+  return(b)
+}
